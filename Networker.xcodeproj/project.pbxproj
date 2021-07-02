@@ -11,6 +11,8 @@
 		CF6DA7ED26889036003B38C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DA7EC26889036003B38C8 /* ContentView.swift */; };
 		CF6DA7EF26889038003B38C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF6DA7EE26889038003B38C8 /* Assets.xcassets */; };
 		CF6DA7F226889038003B38C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF6DA7F126889038003B38C8 /* Preview Assets.xcassets */; };
+		CF6DA7FA26889D69003B38C8 /* SimpleNetworkStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DA7F926889D69003B38C8 /* SimpleNetworkStruct.swift */; };
+		CF6DA7FC26889D72003B38C8 /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6DA7FB26889D72003B38C8 /* Networker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		CF6DA7EE26889038003B38C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF6DA7F126889038003B38C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CF6DA7F326889038003B38C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF6DA7F926889D69003B38C8 /* SimpleNetworkStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleNetworkStruct.swift; sourceTree = "<group>"; };
+		CF6DA7FB26889D72003B38C8 /* Networker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 				CF6DA7EC26889036003B38C8 /* ContentView.swift */,
 				CF6DA7EE26889038003B38C8 /* Assets.xcassets */,
 				CF6DA7F326889038003B38C8 /* Info.plist */,
+				CF6DA7FB26889D72003B38C8 /* Networker.swift */,
+				CF6DA7F926889D69003B38C8 /* SimpleNetworkStruct.swift */,
 				CF6DA7F026889038003B38C8 /* Preview Content */,
 			);
 			path = Networker;
@@ -139,7 +145,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF6DA7ED26889036003B38C8 /* ContentView.swift in Sources */,
+				CF6DA7FA26889D69003B38C8 /* SimpleNetworkStruct.swift in Sources */,
 				CF6DA7EB26889036003B38C8 /* NetworkerApp.swift in Sources */,
+				CF6DA7FC26889D72003B38C8 /* Networker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
