@@ -15,25 +15,26 @@ struct ContentView: View {
     @State var logoIsHidden: Bool = false
     @State var textIsHidden: Bool = false
     @State var endAmount: CGFloat = 0
-
     
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color.white, Color.green]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
-            ShapeView(bezier: .logo, pathBounds: pathBounds)
-                .trim(from: 0, to: endAmount)
-                .stroke(Color.black, lineWidth: 4)
-                .frame(width: 250, height: 250, alignment: .center)
-                .opacity(logoIsHidden ? 0:1)
-                .onAppear {
-                    withAnimation(.easeInOut(duration: 2)) {
-                        self.endAmount = 1
-                    }
-                    withAnimation(Animation.easeIn(duration: 1).delay(2)) {
-                        self.logoIsHidden = true
-                    }
+            ZStack {
+                ShapeView(bezier: .logo, pathBounds: pathBounds)
+                    .trim(from: 0, to: endAmount)
+                    .stroke(Color.black, lineWidth: 5)
+            }
+            .frame(width: 300, height: 300, alignment: .center)
+            .opacity(logoIsHidden ? 0:1)
+            .onAppear {
+                withAnimation(.easeInOut(duration: 2)) {
+                    self.endAmount = 1
                 }
+                withAnimation(Animation.easeIn(duration: 1).delay(2)) {
+                    self.logoIsHidden = true
+                }
+            }
             VStack {
                 Spacer()
                 ZStack {
@@ -59,7 +60,7 @@ struct ContentView: View {
                     }
                 }, label: {
                     Text("Get Insult")
-                        .frame(width: 250, height: 40, alignment: .center)
+                        .frame(width: 250, height: 45, alignment: .center)
                         .background(Color.green)
                         .cornerRadius(20)
                         .shadow(color: .black, radius: 5, x: 1, y: 1)
@@ -69,7 +70,7 @@ struct ContentView: View {
                 Spacer()
             }.opacity(textIsHidden ? 1:0)
             .onAppear {
-                withAnimation(Animation.easeIn(duration: 1).delay(3)) {
+                withAnimation(Animation.easeIn(duration: 1.5).delay(3)) {
                     self.textIsHidden = true
                 }
             }
