@@ -10,12 +10,30 @@ import SwiftUI
 struct ContentView: View {
     
     var networker = Networker.shared
+    let pathBounds = UIBezierPath.calculateBounds(paths: [.logo])
     @State var textInsult: String = "Press Buttom!"
+    @State var logoIsHidden: Bool = false
+    @State var textIsHidden: Bool = false
+    @State var endAmount: CGFloat = 0
+
     
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color.white, Color.green]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
+            ShapeView(bezier: .logo, pathBounds: pathBounds)
+                .trim(from: 0, to: endAmount)
+                .stroke(Color.black, lineWidth: 4)
+                .frame(width: 250, height: 250, alignment: .center)
+                .opacity(logoIsHidden ? 0:1)
+                .onAppear {
+                    withAnimation(.easeInOut(duration: 2)) {
+                        self.endAmount = 1
+                    }
+                    withAnimation(Animation.easeIn(duration: 1).delay(2)) {
+                        self.logoIsHidden = true
+                    }
+                }
             VStack {
                 Spacer()
                 ZStack {
@@ -49,6 +67,11 @@ struct ContentView: View {
                         .foregroundColor(.black)
                 })
                 Spacer()
+            }.opacity(textIsHidden ? 1:0)
+            .onAppear {
+                withAnimation(Animation.easeIn(duration: 1).delay(3)) {
+                    self.textIsHidden = true
+                }
             }
         }
     }
